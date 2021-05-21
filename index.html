@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <script
+      src="https://kit.fontawesome.com/3a388a903d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Book Library</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <span><i class="fas fa-book-open"></i> Book-Library</span>
+        <div class="search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="site-search" placeholder="Search for a book" /
+          name="site-search">
+          <button class="addBook">
+            Add a book <span id="spanBook"></span>
+          </button>
+        </div>
+        <div class="matchList visible"></div>
+        <button class="submit">Library</button>
+      </div>
+
+      <div class="backgroundtransparent hidden"></div>
+
+      <div class="addBookModal hidden">
+        <div class="addBookContainer">
+          <form>
+            <h4>Add a Book</h4>
+            <label for="bookName">Book Name</label>
+            <input type="text" name="bookName" id="bookName" required /><br />
+
+            <label for="bookAuthor">Book Author</label>
+            <input
+              type="text"
+              name="bookAuthor"
+              id="bookAuthor"
+              required
+            /><br />
+
+            <label for="bookDescription">Book Description</label>
+            <input
+              type="text"
+              name="bookDescription"
+              id="bookDescription"
+              required
+            /><br />
+
+            <label for="bookRatingTitle">Book Rating</label>
+            <div class="bookRatingDiv">
+              <label for="Like">Like</label>
+              <input
+                type="radio"
+                name="bookRating"
+                id="like"
+                value="Like"
+                checked
+              />
+              <label for="Dislike">Dislike</label>
+              <input
+                type="radio"
+                name="bookRating"
+                id="dislike"
+                value="Dislike"
+              />
+              <label for="Neutral">Neutral</label>
+              <input
+                type="radio"
+                name="bookRating"
+                id="neutral"
+                value="Neutral"
+              />
+            </div>
+            <div class=""></div>
+            <br />
+
+            <button class="submitAdd">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="overlay hidden"></div>
+    </main>
+
+    <script src="/app/index.js"></script>
+  </body>
+</html>

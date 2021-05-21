@@ -1,0 +1,367 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url("/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+body nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4vw;
+  background-color: rgba(0, 0, 0, 0.534);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body nav h1 {
+  color: white;
+}
+
+body nav h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+body nav .search {
+  display: inline-block;
+}
+
+body nav .search i {
+  color: white;
+}
+
+body nav .search input {
+  width: 0px;
+  height: 3vh;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: transparent;
+  border: none;
+  border-radius: 0%;
+  outline: none;
+}
+
+body nav .search .addBook {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: white;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+body nav .search:hover input,
+body nav .search:active input,
+body nav .search:focus input {
+  width: 10vw;
+  border-radius: 20px;
+  background-color: white;
+}
+
+body main {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .mainLibrary {
+  width: 80%;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.712);
+  margin: 0 auto;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .mainLibrary .sorting {
+  width: 90%;
+  height: 3.5vh;
+  position: relative;
+  margin: 1vh auto;
+  text-align: end;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .mainLibrary .sorting span {
+  font-size: 1.3rem;
+}
+
+body main .mainLibrary .sorting button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+}
+
+body main .mainLibrary .sorting #title {
+  padding-right: 5px;
+}
+
+body main .mainLibrary .sorting #author {
+  padding-left: 5px;
+  border-left: 2px solid rgba(255, 255, 255, 0.342);
+}
+
+body main .mainLibrary .library {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+}
+
+body main .mainLibrary .library .bookCard {
+  background-color: white;
+  width: 10vw;
+  height: 30vh;
+  margin: 10px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-shadow: 5px 5px 15px 5px #00000067;
+          box-shadow: 5px 5px 15px 5px #00000067;
+}
+
+body main .mainLibrary .library .bookCard button {
+  width: 3.5vw;
+  height: auto;
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  background-color: black;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+body main .mainLibrary .library .bookCard #authorCard {
+  font-size: 0.8vw;
+}
+
+body main .mainLibrary .library .bookCard #ratingCard {
+  font-size: 0.7vw;
+}
+
+body main .mainLibrary .library .bookCard #removeBook {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  font-size: 1vw;
+  cursor: pointer;
+  color: black;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+body main .mainLibrary .library .bookCard #removeBook:hover {
+  color: #b92323;
+}
+
+body main .mainLibrary .library .bookCard p {
+  width: 9vw;
+  height: auto;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+  font-size: 0.5vw;
+}
+
+body main .mainLibrary .library .bookCard input {
+  width: 70%;
+  margin: 0 auto;
+}
+
+body main .mainLibrary .library .bookCard .bookRatingDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+  font-size: 0.7rem;
+}
+
+body main .mainLibrary .library .bookCard .headerDiv {
+  height: 1.3vw;
+}
+
+.addBookModal {
+  position: absolute;
+  width: 20vw;
+  height: 60vh;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.addBookModal .addBookContainer {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: auto;
+  justify-items: space-between;
+}
+
+.addBookModal .addBookContainer form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addBookModal .addBookContainer form h4 {
+  font-size: 3vw;
+}
+
+.addBookModal .addBookContainer form label {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.addBookModal .addBookContainer form input {
+  width: 15vw;
+  height: 3vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.addBookModal .addBookContainer form button {
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  width: 5vw;
+  height: 3vh;
+  font-size: 1vw;
+  text-transform: uppercase;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  margin: 0 auto;
+}
+
+.addBookModal .addBookContainer form button:hover {
+  color: black;
+  border-color: black;
+}
+
+.addBookModal .addBookContainer form .bookRatingDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: relative;
+  width: 15vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.editBookForm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: -50%, -50%;
+          transform: -50%, -50%;
+  background-color: red;
+}
+/*# sourceMappingURL=library.css.map */

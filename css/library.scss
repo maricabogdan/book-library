@@ -1,0 +1,304 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url('/img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4vw;
+    background-color: rgba(0, 0, 0, 0.534);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    h1 {
+      color: white;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .search {
+      display: inline-block;
+      i {
+        color: white;
+      }
+
+      input {
+        width: 0px;
+        height: 3vh;
+        transition: all 1s;
+        background-color: transparent;
+        border: none;
+        border-radius: 0%;
+        outline: none;
+      }
+
+      .addBook {
+        background-color: transparent;
+        color: white;
+        border: none;
+        outline: white;
+        margin-left: 2px;
+        cursor: pointer;
+      }
+    }
+
+    .search:hover,
+    .search:active,
+    .search:focus {
+      input {
+        width: 10vw;
+        border-radius: 20px;
+        background-color: white;
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+
+    .mainLibrary {
+      width: 80%;
+      height: 60vh;
+      background-color: rgba(255, 255, 255, 0.712);
+      margin: 0 auto;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .sorting {
+        width: 90%;
+        height: 3.5vh;
+        position: relative;
+        // right: 30vw;
+        margin: 1vh auto;
+        text-align: end;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-size: 1.3rem;
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 1.3rem;
+          color: white;
+          cursor: pointer;
+        }
+
+        #title {
+          padding-right: 5px;
+        }
+
+        #author {
+          padding-left: 5px;
+          border-left: 2px solid rgba(255, 255, 255, 0.342);
+        }
+      }
+
+      .library {
+        // margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: auto;
+        .bookCard {
+          background-color: rgb(255, 255, 255);
+          // border: 0.5px solid rgb(31, 31, 31);
+          width: 10vw;
+          height: 30vh;
+          margin: 10px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          text-align: center;
+          justify-content: space-around;
+          box-shadow: 5px 5px 15px 5px #00000067;
+
+          button {
+            width: 3.5vw;
+            height: auto;
+            position: absolute;
+            right: 1vw;
+            top: 1vw;
+            background-color: black;
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            border: 2px solid #000000;
+            cursor: pointer;
+          }
+
+          #authorCard {
+            font-size: 0.8vw;
+          }
+
+          #ratingCard {
+            font-size: 0.7vw;
+            // position: absolute;
+          }
+
+          #removeBook {
+            position: absolute;
+            top: 1vw;
+            left: 1vw;
+            font-size: 1vw;
+            cursor: pointer;
+            color: black;
+            transition: 0.4s all;
+          }
+
+          #removeBook:hover {
+            color: rgb(185, 35, 35);
+          }
+
+          p {
+            width: 9vw;
+            height: auto;
+            margin: 0 auto;
+            overflow-wrap: break-word;
+            font-size: 0.5vw;
+          }
+
+          input {
+            width: 70%;
+            margin: 0 auto;
+          }
+
+          .bookRatingDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 5px;
+            // background-color: red;
+
+            font-size: 0.7rem;
+          }
+
+          .headerDiv {
+            height: 1.3vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+.addBookModal {
+  position: absolute;
+  width: 20vw;
+  height: 60vh;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+
+  .addBookContainer {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 100%;
+    height: auto;
+    justify-items: space-between;
+    form {
+      width: 100%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+
+      h4 {
+        font-size: 3vw;
+      }
+
+      label {
+        margin: 10px;
+        display: flex;
+        position: relative;
+      }
+
+      input {
+        width: 15vw;
+        height: 3vh;
+        align-items: center;
+        border-radius: 10px;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        outline: none;
+      }
+
+      button {
+        background-color: transparent;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        width: 5vw;
+        height: 3vh;
+        font-size: 1vw;
+        text-transform: uppercase;
+        border-radius: 20px;
+        color: rgba(0, 0, 0, 0.3);
+        transition: all 0.4s;
+        margin: 0 auto;
+      }
+
+      button:hover {
+        color: black;
+        border-color: black;
+      }
+
+      .bookRatingDiv {
+        display: flex;
+        flex-direction: row;
+        display: relative;
+        width: 15vw;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.editBookForm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: (-50%, -50%);
+  background-color: red;
+}
