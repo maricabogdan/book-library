@@ -1,5 +1,7 @@
 Book Library
+
 JavaScript and Local Storage
+
 What have this web app:
 
 Search a book
